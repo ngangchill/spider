@@ -1,0 +1,75 @@
+/* 管理界面各标签样式 */
+html {
+    height: 100%;
+    margin-bottom: 1px;
+}
+
+body {
+    font-size: 12px;
+    font-family: Verdana, Arial;
+    padding: 20px;
+    margin: 20px;
+}
+
+a {
+    font-size: .8em;    
+    text-align: center;
+    margin: 5px;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: lightblue; 
+}
+
+div.tabs {
+    /* width: 800px; */
+    text-align: center;
+    margin-top: 20px;
+}
+
+div.tabs ul, div.submenu ul {
+    list-style: none;
+}
+
+/*主要是用来让父元素包含浮动的子元素*/
+div.tabs ul:after, div.submenu ul:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+div.tabs ul li {
+    float: left;
+    display: block;
+    width: 100px;
+    padding: 5px;
+}
+
+div.submenu ul li {
+    float: left;
+    display: block;
+    width: 200px;
+    padding: 5px;
+}
+
+div.submenu {
+    border: lightblue dashed 1px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+div.tabs ul li:hover {
+    background: lightblue;
+}
+
+#sites, #category, #index, #cleantable, #status, #setting, #database, #logout, #addsite {
+    display: none;
+}
