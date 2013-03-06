@@ -83,7 +83,29 @@
 
             <!-- cleantable 标签 -->
             <div id="cleantable">
-                Clean Table part
+                <table cellspacing ="0" cellpadding="0" class="darkgrey">
+                    <tr>
+                        <td align="left">
+                            <table cellpadding="3" cellspacing = "1"  width="100%">
+                                <tr class="grey"  >
+                                    <td align="left"><a href="admin.php?f=15" id="small_button">Clean keywords</a></td>
+                                    <td align="left">Delete all keywords not associated with any link.</td>
+                                </tr>
+                                <tr class="grey"  >
+                                    <td align="left"><a href="admin.php?f=16" id="small_button">Clean links</a></td>
+                                    <td align="left">Delete all links not associated with any site.</td></tr>
+                                <tr class="grey"  >
+                                    <td align="left"><a href="admin.php?f=17" id="small_button">Clear temp tables </a></td>
+                                    <td align="left">items in temporary table.</td>
+                                </tr>
+                                <tr class="grey"  >
+                                    <td align="left"><a href="admin.php?f=23" id="small_button">Clear search log </a></td>
+                                    <td align="left">items in search log.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <!-- status 标签 -->
