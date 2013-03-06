@@ -94,7 +94,7 @@
                             <tr>
                                 <td>URL:</td>
                                 <td align ="right"></td>
-                                <td><input type=text name=url size=60 value ="http://"></td>
+                                <td><input type=text name=url size=60 value =""></td>
                             </tr>
                             <tr>
                                 <td>Title:</td>
