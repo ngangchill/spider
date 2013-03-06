@@ -110,7 +110,15 @@
 
             <!-- status 标签 -->
             <div id="status">
-                Status part
+                <div id='submenu'>
+                    <ul>
+                        <li><a href="#">Top keywords</a></li>
+                        <li><a href="#">Largest pages</a></li>
+                        <li><a href="#">Most popular searches</a></li>
+                        <li><a href="#">Search log</a></li>
+                        <li><a href="#">Spidering logs</a></li>
+                    </ul>
+                </div>
             </div>
 
             <!-- setting 标签 -->
