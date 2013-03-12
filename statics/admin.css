@@ -12,9 +12,9 @@ body {
 }
 
 a {
-    font-size: .8em;    
+    font-size: 12px;    
     text-align: center;
-    margin: 5px;
+    margin: 2px;
     text-decoration: none;
 }
 
@@ -37,6 +37,11 @@ div.tabs ul, div.submenu ul {
     list-style: none;
 }
 
+div.tabs a {
+    font-size: 14px;
+    font-weight: bold;
+}
+
 /*主要是用来让父元素包含浮动的子元素*/
 div.tabs ul:after, div.submenu ul:after {
     content: ".";
@@ -49,7 +54,7 @@ div.tabs ul:after, div.submenu ul:after {
 div.tabs ul li {
     float: left;
     display: block;
-    width: 100px;
+    width: 120px;
     padding: 5px;
 }
 
@@ -70,6 +75,10 @@ div.tabs ul li:hover {
     background: lightblue;
 }
 
-#sites, #category, #index, #cleantable, #status, #setting, #database, #logout, #addsite {
+#category, #index, #cleantable, #status, #setting, #database, #logout, #addsite {
     display: none;
+}
+
+table {
+    font-size: small;
 }

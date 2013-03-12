@@ -25,7 +25,11 @@ class Admin extends CI_Controller
     public function addsites()
     {
         //增加站点的方法
-        $this->load->helper('url');
-        $this->load->view('sites');
+        $this->load->database();
+        $this->siteinfo['url'] = $this->input->get_post('url');
+        $this->siteinfo['title'] = $this->input->get_post('title');
+        $this->siteinfo['short_desc'] = $this->input->get_post('short_desc');
+        $this->db->insert('sites', $this->siteinfo);
+        echo json_encode($this->siteinfo);
     }
 }

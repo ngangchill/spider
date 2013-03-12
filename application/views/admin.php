@@ -110,15 +110,13 @@
 
             <!-- status 标签 -->
             <div id="status">
-                <div id='submenu'>
-                    <ul>
-                        <li><a href="#">Top keywords</a></li>
-                        <li><a href="#">Largest pages</a></li>
-                        <li><a href="#">Most popular searches</a></li>
-                        <li><a href="#">Search log</a></li>
-                        <li><a href="#">Spidering logs</a></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li><a href="#">Top keywords</a></li>
+                    <li><a href="#">Largest pages</a></li>
+                    <li><a href="#">Most popular searches</a></li>
+                    <li><a href="#">Search log</a></li>
+                    <li><a href="#">Spidering logs</a></li>
+                </ul>
             </div>
 
             <!-- setting 标签 -->
@@ -141,31 +139,22 @@
                 <br/>
                 <center>
                     <table>
-                        <form action=admin.php method=post>
+                        <form id="addsites_form">
                             <tr>
                                 <td>URL:</td>
-                                <td align ="right"></td>
-                                <td><input type=text name=url size=60 value =""></td>
+                                <td><input type=text name="url" size=60 value =""></td>
                             </tr>
                             <tr>
                                 <td>Title:</td>
-                                <td></td>   
-                                <td><input type=text name=title size=60></td>
+                                <td><input type=text name="title" size=60 value=""></td>
                             </tr>
                             <tr>
                                 <td>Short description:</td>
-                                <td></td><td><textarea name=short_desc cols=45 rows=3 wrap="virtual"></textarea></td>
+                                <td><textarea name="short_desc" cols=45 rows=3 wrap="virtual" value=""></textarea></td>
                             </tr>
                             <tr>
-                                <td>Category:</td>
-                                <td></td>
-                                <td>
-                                    <tr>
-                                        <td></td>   
-                                        <td></td>       
-                                        <td><input type=submit id="submit" value=Add></td>
-                                    </tr>
-                                </td>
+                                <td><input id="addsites_submit" type=submit value=Add></td>
+                            </tr>
                         </form>
                     </table>
                 </center>
@@ -176,60 +165,6 @@
 
     
 
-<script type="text/javascript">
-$('#sites_btn').click(function(){
-    // $('div#category').hide();
-    $('div.submenu div:not(#sites)').hide();
-    $('div#sites').show();
-    return false;
-});
-
-$('#category_btn').click(function(){
-    $('div.submenu div:not(#category)').hide();
-    $('div#category').show();
-    return false;
-});
-
-$('#index_btn').click(function(){
-    $('div.submenu div:not(#index)').hide();
-    $('div#index').show();
-    return false;
-});
-
-$('#cleantable_btn').click(function(){
-    $('div.submenu div:not(#cleantable)').hide();
-    $('div#cleantable').show();
-    return false;
-});
-
-$('#status_btn').click(function(){
-    $('div.submenu div:not(#status)').hide();
-    $('div#status').show();
-    return false;
-});
-
-$('#setting_btn').click(function(){
-    $('div.submenu div:not(#setting)').hide();
-    $('div#setting').show();
-    return false;
-});
-
-$('#database_btn').click(function(){
-    $('div.submenu div:not(#database)').hide();
-    $('div#database').show();
-    return false;
-});
-
-$('#logout_btn').click(function(){
-    $('div.submenu div:not(#logout)').hide();
-    $('div#logout').show();
-    return false;
-});
-
-$('#addsite_btn').click(function(){
-    $('div.submenu div:not(#addsite)').hide();
-    $('div#addsite').show();
-    return false;
-});
+<script type="text/javascript" src="statics/admin.js">
 </script>
 </body>
