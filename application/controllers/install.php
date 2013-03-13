@@ -13,6 +13,7 @@ class Install extends CI_Controller
         //使用数据库维护类的时候，无法指定timestamp的默认类型为CURRENT_TIMESTAMP
         //Just a test comment
         //Another test comment
+        //The third comment
         $query = "create table `sites` (
                     `site_id` int(10) not null auto_increment,
                     `url` varchar(255) not null,
