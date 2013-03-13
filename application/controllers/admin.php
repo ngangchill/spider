@@ -8,6 +8,7 @@
  */
 
 //管理界面各种功能控制器
+//Alse a test comment
 class Admin extends CI_Controller
 {
     public function __construct()
