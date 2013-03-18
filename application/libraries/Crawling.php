@@ -3,6 +3,8 @@
 class Crawling
 {
     public $url;
+
+    //获取页面内容，供其它函数使用
     public function getUrlContent($url)
     {
         $handle = fopen($url, "r");
