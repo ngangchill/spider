@@ -8,8 +8,6 @@
  */
 
 //管理界面各种功能控制器
-//Alse a test comment
-//控制面板
 class Admin extends CI_Controller
 {
     public function __construct()
@@ -33,5 +31,17 @@ class Admin extends CI_Controller
         $this->siteinfo['short_desc'] = $this->input->get_post('short_desc');
         $this->db->insert('sites', $this->siteinfo);
         echo json_encode($this->siteinfo);
+    }
+
+    public function curltest()
+    {
+        $url = "http://xrong.net";
+        $ch = curl_init($url);
+        $fp = fopen("homepage.txt", "w");
+        curl_setopt($ch, CURLOPT_FILE, $fp);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_exec($ch);
+        curl_close($ch);
+        fclose($fp);
     }
 }
