@@ -35,13 +35,26 @@ class Admin extends CI_Controller
 
     public function curltest()
     {
-        $url = "http://xrong.net";
-        $ch = curl_init($url);
-        $fp = fopen("homepage.txt", "w");
-        curl_setopt($ch, CURLOPT_FILE, $fp);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_exec($ch);
-        curl_close($ch);
-        fclose($fp);
+        $this->load->database();
+        $dbarray = array();
+        $this->load->library('crawling');
+        $pageContent = $this->crawling->getUrlContent('http://mobile.163.com');
+        $urls = $this->crawling->filterUrls($pageContent);
+        foreach ($urls as $key => $value)
+        {
+            $dbarray[] = array(
+                'url' => $key,
+                'title' => iconv('gb2312', 'utf-8', $value),
+                'md5' => md5($key),
+            );
+        }
+
+        $this->db->insert_batch('sites', $dbarray);
+    }
+
+    public function gettitle()
+    {
+        $temp = array("a" => "aaa", "b" => "bbb", "c" => "ccc");
+        echo $temp['a'];
     }
 }
