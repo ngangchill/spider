@@ -4,19 +4,20 @@ class Crawling
 {
     public $url;
 
-    //获取页面内容，供其它函数使用
-    public function getUrlContent($url)
+    //获取页面内容与页面编码，供其它函数使用
+    public function getPageContent($url)
     {
-        $handle = fopen($url, "r");
-        if ($handle)
-        {
-            $content = stream_get_contents($handle, 1024*1024);
-            return $content;
-        } 
-        else
-        {
-            return false;
-        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $pageContent = curl_exec($ch);
+        $charset = getCharset($ch, $pageContent);
+        $results = array(
+            'content' => $pageContent,
+            'charset' => $charset,
+        );
+        curl_close($ch);
+        return $results;
     }
 
     public function filterUrls($content)
