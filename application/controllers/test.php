@@ -23,4 +23,11 @@ class Test extends CI_Controller
             echo $element->href. '<br>';
         }
     }
+
+    public function reflect()
+    {
+        $this->load->library('simple_html_dom');
+        $temp = new ReflectionClass($this->simple_html_dom);
+        Reflection::export($temp);
+    }
 }
