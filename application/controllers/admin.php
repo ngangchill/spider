@@ -62,7 +62,8 @@ class Admin extends CI_Controller
     public function test()
     {
         $this->load->library('crawling');
-        $info = $this->crawling->getUrlContent('http://mobile.163.com');
-        print_r($info);
+        $pageContent = $this->crawling->getPageContent('http://mobile.163.com');
+        $tags = $this->crawling->getHtmlTag('title', $pageContent['content']);
+        print_r($tags);
     }
 }
