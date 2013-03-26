@@ -26,8 +26,17 @@ class Test extends CI_Controller
 
     public function reflect()
     {
-        $this->load->library('simple_html_dom');
-        $temp = new ReflectionClass($this->simple_html_dom);
-        Reflection::export($temp);
+        $this->load->library('calendar');
+        $reflect = new ReflectionClass('CI_Calendar');
+        echo $reflect->getStartLine();
+        $path = $reflect->getFileName();
+        $temp = @file($path);
+        echo $reflect->getEndLine();
+        $len = $reflect->getEndLine() - $reflect->getStartLine() + 1;
+        echo implode(array_slice($temp, $reflect->getStartLine() - 1, $len));
+        // foreach ($func->getParameters() as $param)
+        // {
+        //     echo $param,'<br>';
+        // }
     }
 }
